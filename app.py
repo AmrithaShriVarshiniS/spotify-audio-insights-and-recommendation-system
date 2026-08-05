@@ -289,12 +289,14 @@ else:
             x_feature = st.selectbox("X Axis Feature:", features_list, index=0)
             y_feature = st.selectbox("Y Axis Feature:", features_list, index=6)
             
-            # Subsample for faster plotting
-            sample_df = df.sample(2000, random_state=42)
+            # Filter for 6 contrasting genres for a clean, non-scrollable legend
+            target_genres = ['classical', 'black-metal', 'dance', 'acoustic', 'disco', 'ambient']
+            filtered_df = df[df['track_genre'].isin(target_genres)]
+            sample_df = filtered_df.sample(min(2000, len(filtered_df)), random_state=42)
             fig_scatter = px.scatter(
                 sample_df, x=x_feature, y=y_feature, color='track_genre',
                 hover_data=['track_name', 'artists'],
-                title=f"{x_feature.capitalize()} vs {y_feature.capitalize()} (Sample of 2000 tracks)"
+                title=f"{x_feature.capitalize()} vs {y_feature.capitalize()} (6 Representative Genres)"
             )
             fig_scatter.update_layout(
                 plot_bgcolor='rgba(0,0,0,0)',
