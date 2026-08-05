@@ -285,8 +285,9 @@ else:
             
         with chart_col2:
             st.markdown("#### Feature Relationships")
-            x_feature = st.selectbox("X Axis Feature:", ['danceability', 'energy', 'loudness', 'tempo'], index=0)
-            y_feature = st.selectbox("Y Axis Feature:", ['energy', 'valence', 'loudness', 'acousticness'], index=1)
+            features_list = ['danceability', 'energy', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'popularity']
+            x_feature = st.selectbox("X Axis Feature:", features_list, index=0)
+            y_feature = st.selectbox("Y Axis Feature:", features_list, index=6)
             
             # Subsample for faster plotting
             sample_df = df.sample(2000, random_state=42)
