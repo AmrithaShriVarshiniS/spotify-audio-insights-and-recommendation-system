@@ -197,7 +197,7 @@ st.markdown("""
 
 # Define Paths
 PROJECT_DIR = r'C:\Users\Public\data science\GUVI PROJECTS\FINAL PROJECT'
-DATA_PATH = os.path.join(PROJECT_DIR, '0000 (1).parquet')
+DATA_PATH = os.path.join(PROJECT_DIR, 'data', 'spotify_tracks.parquet')
 MODELS_DIR = os.path.join(PROJECT_DIR, 'models')
 
 # Load Data

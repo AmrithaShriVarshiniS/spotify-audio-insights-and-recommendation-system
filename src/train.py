@@ -9,7 +9,7 @@ from sklearn.metrics import classification_report, accuracy_score
 
 def main():
     project_dir = r'C:\Users\Public\data science\GUVI PROJECTS\FINAL PROJECT'
-    data_path = os.path.join(project_dir, '0000 (1).parquet')
+    data_path = os.path.join(project_dir, 'data', 'spotify_tracks.parquet')
     models_dir = os.path.join(project_dir, 'models')
     
     print(f"Reading dataset from {data_path}...")
